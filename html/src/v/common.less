@@ -1,0 +1,87 @@
+@import  'mixin';
+body, div, ol, ul, h1, h2, h3, h4, h5, h6, p, th, td, dl, dd, form, iframe, input, textarea, select, label, article, aside, footer, header, menu, nav, section, time, audio, video {margin: 0;padding: 0; }
+article, aside, footer, header, hgroup, nav, section, audio, canvas, video {display: block; }
+textarea {resize: none; }
+img {border: 0; }
+ul, ol {list-style: none; }
+input, select, textarea {outline: 0;-webkit-user-modify: read-write-plaintext-only; }
+input {-webkit-appearance: none; }
+em {font-style: normal; }
+img {vertical-align: top; }
+           
+input,button{
+	-webkit-tap-highlight-color:transparent;outline:none
+}
+
+body{
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: transparent;
+    font: 14px/1 "SF Pro SC","HanHei SC","SF Pro Text","Myriad Set Pro","SF Pro Icons","Apple Legacy Chevron","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;color:@black0;
+    background: #f3f5f6;
+}
+
+strong{
+  font-weight: 500
+}
+
+a{
+	text-decoration: none;color:@black0;
+}
+
+@font-face {
+  font-family: 'iconfont';  /* project id 24415 */
+  src: url('//at.alicdn.com/t/font_x42381dxwlndygb9.eot');
+  src: url('//at.alicdn.com/t/font_x42381dxwlndygb9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_x42381dxwlndygb9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_x42381dxwlndygb9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_x42381dxwlndygb9.svg#iconfont') format('svg');
+}
+#main{
+    max-width: 750px;margin: 0 auto;overflow: hidden;padding-bottom: 50px;
+}
+.border1,.border1top{
+    position: relative;
+    &:after {
+      z-index: 1;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      content: ' ';
+      height: 1px;
+      background: @border;
+      transform: scaleY(.5);
+    }
+    @media screen and (max-width: 320px) {
+      &{
+            border-width: .5px;
+        }
+    }
+
+    @media screen and (width:320px) {
+        &:after {
+            height: .5px;
+            transform: scaleY(1);
+        }
+    }
+
+    @media screen and (width:375px) {
+        &:after {
+            height: .5px;
+            transform: scaleY(1);
+        }
+    }
+
+    @media screen and (width:414px) {
+        &:after {
+            height: .5px;
+            transform: scaleY(1);
+        }
+    }
+}
+
+.border1top{
+  &:after {
+    top:0;bottom:inherit;
+  }
+}

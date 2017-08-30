@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title></title>
+    <script>
+        var Params = function() {
+            var url = location.search,
+                g = {};
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1),
+                    arr = str.indexOf("&") != -1 ? str.split("&") : [str];
+                for (var i = 0; i < arr.length; i++) {
+                    var tmp = arr[i].split("=");
+                    g[tmp[0]] = decodeURI(tmp[1]);
+                }
+            }
+            return g;
+        }()
+    </script>
+<link href="/html/static/main.css?f908cff92d46533f7551" rel="stylesheet"></head>
+
+<body>
+    <div id="main">
+        <router-view></router-view>
+        <v-toast></v-toast>
+        <v-loading></v-loading>
+        <v-menu></v-menu>
+        <v-login></v-login>
+    </div>
+<script type="text/javascript" src="/html/static/main.js?f908cff92d46533f7551"></script></body>
+
+</html>
